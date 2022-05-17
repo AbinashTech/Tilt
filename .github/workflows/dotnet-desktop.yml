@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ main,develop/ts-sdk,release/ts-sdk ]
 env:
-  PROJECT_PATH: 'cp_tiltswitch_hidromas/Tilt_Switch_System.sln'
+  PROJECT_PATH: 'Tilt/cp_tiltswitch_hidromas/Tilt_Switch_System.sln'
   
 
 jobs:
@@ -20,7 +20,7 @@ jobs:
     - name: 'Install dotnet'
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '5.0.302'
+        dotnet-version: '3.0.*'
 
     - name: 'Restore packages'
       run: dotnet restore ${{ env.PROJECT_PATH }}
