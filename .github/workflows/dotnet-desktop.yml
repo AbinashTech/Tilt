@@ -19,13 +19,13 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: dotnet restore src/DotnetActionsToolkit.sln
+      run: dotnet restore cp_tiltswitch_hidromas/TiltSwitchSystem.sln
     - name: Build
-      run: dotnet build src/DotnetActionsToolkit.sln -c Release --no-restore
+      run: dotnet build cp_tiltswitch_hidromas/TiltSwitchSystem.sln -c Release --no-restore
     - name: Test
-      run: dotnet test src/DotnetActionsToolkit.sln -c Release --no-build --verbosity normal
+      run: dotnet test cp_tiltswitch_hidromas/TiltSwitchSystem.sln -c Release --no-build --verbosity normal
     - name: Pack
-      run: dotnet pack src/DotnetActionsToolkit.sln -c Release --no-build
+      run: dotnet pack cp_tiltswitch_hidromas/TiltSwitchSystem.sln -c Release --no-build
       
   publish:
 
@@ -39,10 +39,9 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: dotnet restore src/DotnetActionsToolkit.sln
+      run: dotnet restore cp_tiltswitch_hidromas/TiltSwitchSystem.sln
     - name: Build
-      run: dotnet build src/DotnetActionsToolkit.sln -c Release --no-restore /p:VersionPatch=${{ github.run_number }}
+      run: dotnet build cp_tiltswitch_hidromas/TiltSwitchSystem.sln -c Release --no-restore /p:VersionPatch=${{ github.run_number }}
     - name: Pack
-      run: dotnet pack src/DotnetActionsToolkit.sln -c Release --no-build /p:VersionPatch=${{ github.run_number }}
-    - name: NuGet Push
-      run: dotnet nuget push src/DotnetActionsToolkit/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+      run: dotnet pack cp_tiltswitch_hidromas/TiltSwitchSystem.sln -c Release --no-build /p:VersionPatch=${{ github.run_number }}
+    
