@@ -10,7 +10,7 @@ jobs:
       matrix:
         runner-os: [windows-latest, ubuntu-latest]
 
-    runs-on: ${{ matrix.runner-os }}
+    
 
     steps:
     - uses: actions/checkout@v2
