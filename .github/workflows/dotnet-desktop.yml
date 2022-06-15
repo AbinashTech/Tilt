@@ -24,21 +24,4 @@ jobs:
       run: dotnet build cp_tiltswitch_hidromas/TiltSwitchSystem.sln -c Release --no-restore
    
       
-  publish:
-
-    runs-on: ubuntu-latest
-    needs: re-build
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 5.0.x
-    - name: Restore dependencies
-      run: dotnet restore cp_tiltswitch_hidromas/TiltSwitchSystem.sln
-    - name: Build
-      run: dotnet build cp_tiltswitch_hidromas/TiltSwitchSystem.sln -c Release --no-restore /p:VersionPatch=${{ github.run_number }}
-    - name: Pack
-      run: dotnet pack cp_tiltswitch_hidromas/TiltSwitchSystem.sln -c Release --no-build /p:VersionPatch=${{ github.run_number }}
-    
+  
