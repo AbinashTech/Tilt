@@ -22,10 +22,7 @@ jobs:
       run: dotnet restore cp_tiltswitch_hidromas/TiltSwitchSystem.sln
     - name: Build
       run: dotnet build cp_tiltswitch_hidromas/TiltSwitchSystem.sln -c Release --no-restore
-    - name: Test
-      run: dotnet test cp_tiltswitch_hidromas/TiltSwitchSystem.sln -c Release --no-build --verbosity normal
-    - name: Pack
-      run: dotnet pack cp_tiltswitch_hidromas/TiltSwitchSystem.sln -c Release --no-build
+   
       
   publish:
 
