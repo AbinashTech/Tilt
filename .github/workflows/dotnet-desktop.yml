@@ -8,7 +8,7 @@ jobs:
   re-build:
     strategy:
       matrix:
-        runner-os: [windows-latest, ubuntu-latest, macos-latest]
+        runner-os: [windows-latest, ubuntu-latest]
 
     runs-on: ${{ matrix.runner-os }}
 
