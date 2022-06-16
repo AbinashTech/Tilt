@@ -8,6 +8,7 @@ on:
 env:
   PROJECT_PATH: 'cp_tiltswitch_hidromas/Tilt_Switch_System.sln'
 jobs:
+
   deploy:
     name: 'Deploy'
     runs-on: 'windows-latest'
